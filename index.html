@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Page Fault Monitor</title>
+    <style>
+        body {
+            background-color: rgb(2, 2, 37);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            padding-top: 40px;
+            font-size: 2.5em;
+        }
+        .button-container {
+            margin-top: 50px;
+        }
+        .custom-button {
+            background-color: white;
+            color: navy;
+            border: 2px solid white;
+            padding: 15px 30px;
+            margin: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .custom-button:hover {
+            background-color: #ffcc00;
+            color: navy;
+            border-color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Page Fault Monitor</h1>
+    <p><strong>What is a Page Fault?</strong></p>
+    <p>
+        A <strong>page fault</strong> occurs when a program accesses a part of its virtual memory that is not currently in physical memory (RAM).<br />
+        There are two types:<br />
+        - <strong>Minor Page Fault</strong>: The page is in memory but not mapped to the process.<br />
+        - <strong>Major Page Fault</strong>: The page is not in memory and must be fetched from disk, which is costly.
+    </p>
+    <div class="button-container">
+        <form action="/run-monitor" method="post" style="display: inline;">
+            <button class="custom-button" type="submit">See the Page Fault</button>
+        </form>
+        <form action="/generate-graph" method="get" style="display: inline;">
+            <button class="custom-button" type="submit">See the Graph</button>
+        </form>
+    </div>
+</body>
+</html>
